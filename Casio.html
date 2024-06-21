@@ -1,0 +1,325 @@
+<!--Casio.html-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relojes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #0010c5;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        ul, li {
+            font-family: 'Times New Roman', Times, serif;
+            color: #484747;
+        }
+        .top-border {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+        .top-border button {
+            font-family:'Times New Roman', Times, serif;
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 10px 20px;
+            font-size: 1em;
+            margin-right: 20px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            border-radius: 5px;
+        }
+        .top-border button:hover {
+            background-color: white;
+            color: #0010c5;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            margin-top: 100px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .filters label {
+            margin-right: 10px;
+        }
+        .filters select, .filters input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: 'Arial', sans-serif;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 10px ridge #3843c2;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+        .product h3 {
+            margin: 10px 0 5px;
+            font-size: 16px;
+            color: #333;
+        }
+        .product ul {
+            padding: 0;
+            list-style-type: none;
+        }
+        .product li {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        .product .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #333;
+            color: #fff;
+            padding: 2px 5px;
+            font-size: 12px;
+            border-radius: 3px;
+        }
+        .product .badge.new {
+            background-color: #007bff;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .product img {
+            transition: transform 0.3s;
+        }
+        .product:hover img {
+            transform: scale(1.1);
+        }
+        .filters select, .filters input {
+            transition: background 0.3s, color 0.3s;
+        }
+        .filters select:hover, .filters input:hover {
+            background-color: #0010c5;
+            color: white;
+        }
+        #orderSelect{
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-border">
+        <div class="cc">
+            <form action="Menu.html" method="POST">
+                <button type="submit" id="vol" name="vol">VOLVER</button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="header"></div>
+        <div class="filters">
+            <div>
+                <label for="orderSelect">Ordenar:</label>
+                <select id="orderSelect">
+                    <option value="newest">Más nuevo</option>
+                    <option value="price-desc">Precio: de mayor a menor</option>
+                    <option value="price-asc">Precio: de menor a mayor</option>
+                    <option value="weight-desc">Peso: de pesado a ligero</option>
+                    <option value="weight-asc">Peso: de ligero a pesado</option>
+                </select>
+            </div>
+        </div>
+        <form action="procesar_compra.php" method="POST" id="cartForm"></form>
+        <div class="products">
+            <div class="product" data-price="700" data-weight="100">
+                <span class="badge">50.º ANIVERSARIO DE LOS RELOJES CASIO</span>
+                <img src="https://4.bp.blogspot.com/-ITD8a4jPIws/Vl1tRZvFnBI/AAAAAAAARNI/277cHYR8h6g/s1600/01_1974_CASIOTRON.jpg" alt="Reloj 1">
+                <h3>PRIMER CASIO</h3>
+                <ul style="list-style-type:disc;">
+                    <li>Precio: $700 USD</li>
+                    <li>Diseño retro clásico.</li>
+                    <li>Correa y caja de metal.</li>
+                    <li>Pantalla digital básica.</li>
+                </ul>
+               
+            </div>
+            <div class="product" data-price="400" data-weight="120">
+                <span class="badge new">NUEVO</span>
+                <img src="https://www.casio.com/content/dam/casio/product-info/locales/mx/es-ar/timepiece/product/watch/M/MT/MTG/mtg-b3000dn-1a/assets/MTG-B3000DN-1A.png.transform/main-visual-pc/image.png" alt="Reloj 2">
+                <h3>CASIO</h3>
+                <ul style="list-style-type:disc;">
+                    <li>Precio: $400 USD</li>
+                    <li>Diseño moderno y robusto.</li>
+                    <li>Caja grande con colores llamativos.</li>
+                    <li>Correa de resina y funcionalidades avanzadas.</li>
+                </ul>
+      
+            </div>
+            <div class="product" data-price="70" data-weight="80">
+                <span class="badge new">NUEVO</span>
+                <img src="https://www.casio.com/content/dam/casio/product-info/locales/mx/es-ar/timepiece/product/watch/A/A7/A70/a700wevg-9a/assets/A700WEVG-9A.png.transform/main-visual-pc/image.png" alt="Reloj 3">
+                <h3>CASIO</h3>
+                <ul style="list-style-type:disc;">
+                    <li>Precio: $70 USD</li>
+                    <li>Diseño dorado.</li>
+                    <li>Caja y correa de metal.</li>
+                    <li>Pantalla digital básica.</li>
+                </ul>
+               
+            </div>
+            <div class="product" data-price="50" data-weight="70">
+                <img src="https://cdn.watchcharts.com/listings/d618bd93-8ea7-4348-8540-9bcac597c34b.jpg?d=600x600" alt="Reloj 4">
+                <h3>CASIO</h3>
+                <ul style="list-style-type:disc;">
+                    <li>Precio: $50 USD</li>
+                    <li>Diseño iridiscente.</li>
+                    <li>Caja y correa de metal con acabado multicolor.</li>
+                    <li>Pantalla digital básica.</li>
+                </ul>
+               
+            </div>
+            <div class="product" data-price="60" data-weight="75">
+                <img src="https://unestiloperu.com/wp-content/uploads/reloj-casio-a168wg-9w-dorado-vintage.jpg" alt="Reloj 5">
+                <h3>CASIO</h3>
+                <ul style="list-style-type:disc;">
+                    <li>Precio: $60 USD</li>
+                    <li>Diseño dorado vintage.</li>
+                    <li>Caja y correa de metal.</li>
+                    <li>Pantalla digital con función de iluminación.</li>
+                </ul>
+              
+            </div>
+            <div class="product" data-price="20" data-weight="50">
+                <img src="https://th.bing.com/th/id/R.bd33c1372f3d1cf7a7ba82459d3838ae?rik=xu9PtGWcbxxDkQ&pid=ImgRaw&r=0" alt="Reloj 6">
+                <h3>CASIO</h3>
+                <ul style="list-style-type:disc;">
+                    <li>Precio: $20 USD</li>
+                    <li>Diseño negro simple.</li>
+                    <li>Caja de resina.</li>
+                    <li>Pantalla digital básica.</li>
+                </ul>
+           
+            </div>
+            <div class="product" data-price="30" data-weight="65">
+                <img src="https://cdn.shopify.com/s/files/1/0007/7660/1715/products/Reloj-Casio-Vintage-F-108WHC-4ACF-Rojo-_EXCLUSIVO_.jpg-5_600x.jpg?v=1585595848" alt="Reloj 7">
+                <h3>CASIO</h3>
+                <ul style="list-style-type:disc;">
+                    <li>Precio: $30 USD</li>
+                    <li>Diseño rojo llamativo.</li>
+                    <li>Caja y correa de resina.</li>
+                    <li>Pantalla digital con función de iluminación.</li>
+                </ul>
+          
+            </div>
+            <div class="product" data-price="25" data-weight="55">
+                <img src="https://th.bing.com/th/id/OIP.XwTlxaXpCBPXPjgUuReunwHaHa?rs=1&pid=ImgDetMain" alt="Reloj 8">
+                <h3>CASIO</h3>
+                <ul style="list-style-type:disc;">
+                    <li>Precio: $25 USD</li>
+                    <li>Diseño azul claro.</li>
+                    <li>Caja y correa de resina.</li>
+                    <li>Pantalla digital básica.</li>
+                </ul>
+           
+            </div>
+            <div class="product" data-price="50" data-weight="70">
+                <img src="https://th.bing.com/th/id/OIP.YAkAVAgdfk-VYIhYhOte6QHaHa?rs=1&pid=ImgDetMain" alt="Reloj 9">
+                <h3>CASIO</h3>
+                <ul style="list-style-type:disc;">
+                    <li>Precio: $50 USD</li>
+                    <li>Diseño cobrizo.</li>
+                    <li>Caja y correa de metal.</li>
+                    <li>Pantalla digital básica.</li>
+                </ul>
+               
+            </div>
+            <div class="product" data-price="150" data-weight="90">
+                <img src="https://villarreal.com.co/404-large_default/reloj-casio-retro-metalico-digital-a158wa-1df.jpg" alt="Reloj 10">
+                <h3>CASIO</h3>
+                <ul style="list-style-type:disc;">
+                    <li>Precio: $150 USD</li>
+                    <li>Diseño moderno con esfera analógica.</li>
+                    <li>Caja y correa de metal.</li>
+                    <li>Funciones avanzadas de cronógrafo y resistencia al agua.</li>
+                </ul>
+            
+            </div>
+        </div>
+    </div>
+    <div class="bottom-border"></div>
+
+    <script>
+        const orderSelect = document.getElementById("orderSelect");
+        const productsContainer = document.querySelector(".products");
+
+        orderSelect.addEventListener("change", () => {
+            const order = orderSelect.value;
+            const products = Array.from(productsContainer.children);
+        });
+
+            products.sort((a, b) => {
+                const priceA = parseFloat(a.getAttribute("data-price"));
+                const priceB = parseFloat(b.getAttribute("data-price"));
+                const weightA = parseFloat(a.getAttribute("data-weight"));
+                const weightB = parseFloat(b.getAttribute("data-weight"));
+
+                switch (order) {
+                    case "newest":
+                        return 0; 
+                    case "price-desc":
+                        return priceB - priceA;
+                    case "price-asc":
+                        return priceA - priceB;
+                    case "weight-desc":
+                        return weightB - weightA;
+                    case "weight-asc":
+                        return weightA - weightB;
+                    default:
+                        return 0;
+                }
+            });
+
+        
+        
+    </script>
+</body>
+
+</html>

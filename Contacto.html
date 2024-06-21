@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Tik-Tak Clock</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #0010c5;
+            color: white;
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            flex-direction: column;
+        }
+
+        .top-border {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 2; 
+        }
+
+        .top-border .icon {
+            width: 30px;
+            height: 30px;
+            background-color: #0010c5;
+            clip-path: polygon(
+                50% 0%, 
+                61% 35%, 
+                98% 35%, 
+                68% 57%, 
+                79% 91%, 
+                50% 70%, 
+                21% 91%, 
+                32% 57%, 
+                2% 35%, 
+                39% 35%
+            );
+            margin-left: 20px;
+        }
+
+        .top-border .cc {
+            display: flex;
+            align-items: center;
+        }
+
+        .top-border a {
+            background-color: transparent;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            margin-right: 20px;
+            cursor: pointer;
+            transition: background 0.3s;
+            border-radius: 5px;
+            font-family: 'Times New Roman', Times, serif;
+            text-decoration: none;
+        }
+
+        .top-border a:hover {
+            background-color: #0010c5;
+        }
+
+        .container {
+            width: 80%;
+            text-align: center;
+            padding-top: 100px; 
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            font-size: 20px;
+        }
+
+        .contact-info a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            margin: 5px;
+            padding: 8px 15px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+
+        .contact-info a:hover {
+            background-color: #0047ab;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-border">
+        <div class="icon"></div>
+        <div class="cc">
+            <a href="https://www.facebook.com/profile.php?id=61556771896291" id="facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Contacto</h1>
+        <p>¡Gracias por tu interés en Tik-Tak Clock! Si tienes alguna pregunta o comentario, no dudes en ponerte en contacto con nosotros.</p>
+        
+        <div class="contact-info">
+            <p>Visítanos en nuestra tienda:</p>
+            <p>Tik-Tak Clock</p>
+            <p>Dirección: Cumbres Del Mediterraneo, Los Pirineo #173</p>
+            <p>Ciudad, País</p>
+            <p><a href="tel:+123456789">Teléfono: +52 631 270 4177</a></p>
+            <p><a href="mailto:info@tiktakclock.com">Correo electrónico: info@tiktakclock.com</a></p>
+        </div>
+    </div>
+</body>
+</html>

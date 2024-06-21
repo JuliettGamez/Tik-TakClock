@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créditos</title>
+    <style> 
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #000;
+            color: white;
+        }
+        img.background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            max-width: 800px;
+            color: #fff;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .title {
+            font-size: 50px;
+            margin-top: 20px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .creditos {
+            font-size: 24px;
+            color: white;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .creditos p {
+            margin-bottom: 10px;
+        }
+        .creditos .t {
+            font-size: 30px; 
+            color: #00bcd4;
+            margin-top: 15px;
+            border-bottom: 1px solid #00bcd4;
+            padding-bottom: 5px;
+        }
+        .creditos a {
+            color: #00bcd4;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .creditos a:hover {
+            color: #ff4081;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 14px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .container, .footer {
+            animation: fadeIn 2s ease-in-out;
+        }
+        .small-gif {
+            width: 150px; /* Ajusta este valor según el tamaño deseado */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <img src="https://i.pinimg.com/originals/b0/48/e2/b048e2c9c0c54189b784b9a87ae8c110.jpg" alt="Background image" class="background">
+    </div>
+    <div class="container">
+        <div class="title">Créditos</div>
+        <div class="creditos">
+            <section>
+                <p class='t'>Desarrolladores y Diseñadores</p>
+                <p>Gutierrez Gamez Joseline Juliett (Desarrollo y Diseño)</p>
+            </section>
+            <section>
+                <p class='t'>Software y Herramientas Utilizadas</p>
+                <p>Visual Studio Code</p>
+            </section>
+            <section>
+                <p class='t'>Medios Audiovisuales</p>
+                <p>YouTube <a href='https://www.youtube.com/watch?v=TFLF-uB1YfE' target='_blank'>Fondo</a></p>
+                <a href="Gracias.html">
+                    <img id="im" class="small-gif" src="https://logospng.org/download/casio/logo-casio-1024.png" alt="relojo">
+                </a>
+                <a href="Gracias.html">
+                    <img id="gifi" class="small-gif" src="https://c.tenor.com/_UolS-sb7vsAAAAj/casio-watch-retro-watch.gif" alt="GIF de reloj retro Casio">
+                </a>
+            </section>
+            <section>
+                <p class='t'>Páginas externas</p>
+                <p>Maps</p>
+            </section>
+        </div>
+    </div>
+    <div class="footer">
+        Última actualización: 18 de junio de 2024
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracias</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+        .container h1 {
+            font-size: 50px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+            cursor: pointer;
+        }
+        .marquee {
+            width: 100%;
+            overflow: hidden;
+            position: absolute;
+            bottom: 20px;
+            color: #00bcd4;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
+        }
+        .marquee div {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 15s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 14px;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop muted id="video-background">
+        <source src="relok.mp4" type="video/mp4">
+        Your browser does not support the HTML5 video tag.
+    </video>
+    <div class="container" onclick="toggleVisibility()">
+        <h1 id="thanks-text">Gracias por visitar nuestra página</h1>
+    </div>
+    <div class="marquee">
+        <div>Última actualización: 18 de junio de 2024 &nbsp; | &nbsp; ¡Vuelve pronto para más actualizaciones! &nbsp; | &nbsp; Gracias por tu visita.</div>
+    </div>
+
+    <script>
+        function toggleVisibility() {
+            var text = document.getElementById("thanks-text");
+            if (text.style.visibility === "hidden") {
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+    </script>
+</body>
+</html>
